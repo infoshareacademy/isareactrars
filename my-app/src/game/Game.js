@@ -21,7 +21,7 @@ export const Game = ({ name }) => {
             alert(`Gratulacje wygrałeś w grę ${name}!`);
             setPoints(0);
         }
-    })
+    }, [points, name, setPoints])
 
     return (
         <>
