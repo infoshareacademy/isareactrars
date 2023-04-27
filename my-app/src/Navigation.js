@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -9,11 +10,11 @@ export const Navigation = () => {
         <Typography variant="h6" component="div" sx={{ marginRight: 3 }}>
           My App
         </Typography>
-        <Button color="inherit">Home</Button>
-        <Button color="inherit">Game</Button>
-        <Button color="inherit">Users</Button>
-        <Button color="inherit">Forms</Button>
-        <Button color="inherit">About me</Button>
+        <Button color="inherit" component={Link} to="/">Home</Button>
+        <Button color="inherit" component={Link} to="/game">Game</Button>
+        <Button color="inherit" component={Link} to="/users">Users</Button>
+        <Button color="inherit" component={Link} to="/forms">Forms</Button>
+        <Button color="inherit" component={Link} to="/about-me">About me</Button>
       </Toolbar>
     </AppBar>
 }
