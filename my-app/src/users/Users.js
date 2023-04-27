@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { User } from './User';
 
 export const Users = () => {
     const [users, setUsers] = useState([]);
@@ -14,8 +15,7 @@ export const Users = () => {
     return (
         <ul>
             {users.map(user => (
-                <li key={user.id}>{user.name} 
-                    works in {user.company.name}.</li>
+                <User key={user.id} user={user} />
             ))}
         </ul>
     )
