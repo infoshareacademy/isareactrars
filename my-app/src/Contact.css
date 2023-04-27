@@ -1,0 +1,11 @@
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-container h3 {
+    color: orange;
+    text-transform: uppercase;
+    font-weight: 700;
+}
