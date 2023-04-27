@@ -2,7 +2,7 @@ import MyName from './MyName';
 
 function App() {
   return (
-    <MyName name="Janusz" />
+    <MyName name="Janusz" surname="Kowalski" />
   );
 }
 
