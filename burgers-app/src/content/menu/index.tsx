@@ -7,6 +7,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { useEffect, useState } from "react";
+import { Link } from 'react-router-dom';
 import { Burger } from "../../common/types";
 import { getBurgers } from "../../services/get-burgers";
 
@@ -36,7 +37,9 @@ export const Menu = () => {
                     {
                         burgers.map(burger => (
                             <TableRow key={burger.id}>
-                                <TableCell>{burger.name}</TableCell>
+                                <TableCell>
+                                    <Link to={`/menu/${burger.id}`}>{burger.name}</Link>
+                                </TableCell>
                                 <TableCell align="right">{Object.keys(burger.ingredients).join(', ')}</TableCell>
                                 <TableCell align="right">{burger.price}</TableCell>
                             </TableRow>
