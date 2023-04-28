@@ -1,11 +1,13 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import styled from 'styled-components';
+import { LanguageContext } from '../App';
 
 const Score = styled.span`
     color: ${props => props.isRed ? 'red' : 'black'}
 `;
 
 export const Game = ({ name }) => {
+    const lang = useContext(LanguageContext);
     const [points, setPoints] = useState(0);
 
     const increase = () => { 
@@ -25,7 +27,13 @@ export const Game = ({ name }) => {
 
     return (
         <>
-            <h3>Witaj w grze {name}!</h3>
+            <h3>
+                {
+                    lang === 'pl'
+                        ? `Witaj w grze ${name}!`
+                        : `Welcome to the game ${name}!`
+                }
+            </h3>
             <h4>
                 Twoja liczba punktów to: 
                 <Score isRed={points < 0}>{points}</Score>!
