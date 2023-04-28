@@ -10,10 +10,20 @@ import Paper from '@mui/material/Paper';
 import { useEffect, useState } from "react";
 import { Burger } from "../../common/types";
 import { getBurgers } from "../../services/get-burgers";
-
+import { Row } from "./row";
+import { EditRow } from "./edit-row";
 
 export const Admin = () => {
+    const [editId, setEditId] = useState<number | null>(null);
     const [burgers, setBurgers] = useState<Burger[]>([]);
+
+    const enterEditMode = (id: number) => {
+        setEditId(id);
+    }
+
+    const cancelEditMode = () => {
+        setEditId(null)
+    }
 
     const fetchBurgers = () => {
         getBurgers()
@@ -21,7 +31,6 @@ export const Admin = () => {
                 setBurgers(data);
             })
     }
-
 
     useEffect(() => {
         fetchBurgers();
@@ -36,17 +45,26 @@ export const Admin = () => {
                         <TableCell>Name</TableCell>
                         <TableCell align="right">Ingredients</TableCell>
                         <TableCell align="right">Price</TableCell>
+                        <TableCell sx={{ width: '60px'}}/>
+                        <TableCell sx={{ width: '80px'}}/>
                     </TableRow>
                     </TableHead>
                     <TableBody>
                     {
-                        burgers.map(burger => (
-                            <TableRow key={burger.id}>
-                                <TableCell>{burger.name}</TableCell>
-                                <TableCell align="right">{Object.keys(burger.ingredients).join(', ')}</TableCell>
-                                <TableCell align="right">{burger.price}</TableCell>
-                            </TableRow>
-                        ))
+                        burgers.map(burger => editId === burger.id 
+                            ? <EditRow 
+                                key={burger.id} 
+                                burger={burger} 
+                                refresh={fetchBurgers} 
+                                cancelEditMode={cancelEditMode} 
+                            /> 
+                            : <Row 
+                                key={burger.id} 
+                                burger={burger} 
+                                refresh={fetchBurgers} 
+                                enterEditMode={enterEditMode} 
+                            />
+                        )
                     }
                     </TableBody>
                 </Table>
