@@ -1,9 +1,12 @@
 import { Route, Routes } from "react-router-dom";
+import { Menu } from './menu';
+import { Home } from './home';
+import { Admin } from './admin';
 
 export const Content = () => (
     <Routes>
-        <Route path="/" element={<h1>Home</h1>} />
-        <Route path="/menu" element={<h1>Menu</h1>} />
-        <Route path="/admin" element={<h1>Admin</h1>} />
+        <Route path="/" element={<Home />} />
+        <Route path="/menu" element={<Menu />} />
+        <Route path="/admin" element={<Admin />} />
     </Routes>
 )
