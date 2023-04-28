@@ -10,6 +10,7 @@ const links = [
     { label: 'Users', path: '/users' },
     { label: 'Forms', path: '/forms' },
     { label: 'About me', path: '/about-me' },
+    { label: 'Sign', path: '/sign' },
 ];
 
 const getActiveStyles = ({ isActive }) => ({ textDecoration: isActive ? 'underline' : undefined})

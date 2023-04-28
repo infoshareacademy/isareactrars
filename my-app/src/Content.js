@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
+import { Sign } from './sign/Sign';
 import { AboutMe } from './about-me/AboutMe';
 import { Game } from './game/Game';
 import { Users } from './users/Users';
@@ -19,6 +20,7 @@ export const Content = () => (
                     <MyBetterForm />
                     <MyForm />
                 </>} />
+            <Route path="/sign" element={<Sign />} />
         </Routes>
     </Wrapper>  
 )
