@@ -23,7 +23,7 @@ export const Navigation = () => {
         </Typography>
         {
             links.map(link => (
-                <Button color="inherit" component={NavLink} style={getActiveStyles} to={link.path}>{link.label}</Button>
+                <Button key={link.path} color="inherit" component={NavLink} style={getActiveStyles} to={link.path}>{link.label}</Button>
             ))
         }
       </Toolbar>

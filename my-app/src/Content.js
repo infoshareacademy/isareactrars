@@ -7,6 +7,7 @@ import { MyForm } from './forms/MyForm';
 import { MyBetterForm } from './forms/MyBetterForm';
 import { MyBoostedForm } from './forms/MyBoostedForm';
 import { Wrapper } from './Wrapper';
+import { UserDetails } from './users/UserDetails';
 
 export const Content = () => (
     <Wrapper>
@@ -15,6 +16,7 @@ export const Content = () => (
             <Route path="/about-me" element={<AboutMe />} />
             <Route path="/game" element={<Game name="Counter Strike" />} />
             <Route path="/users" element={<Users />} />
+            <Route path="/users/:id" element={<UserDetails />} />
             <Route path="/forms" element={<>
                     <MyBoostedForm />
                     <MyBetterForm />
