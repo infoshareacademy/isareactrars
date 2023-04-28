@@ -1,13 +1,13 @@
-import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { LanguageContext } from '../App';
+import { useLanguageContext } from '../contexts/LanguageContext'
 
 const Score = styled.span`
     color: ${props => props.isRed ? 'red' : 'black'}
 `;
 
 export const Game = ({ name }) => {
-    const lang = useContext(LanguageContext);
+    const { lang } = useLanguageContext();
     const [points, setPoints] = useState(0);
 
     const increase = () => { 
