@@ -7,23 +7,15 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { useEffect, useState } from "react";
+import { Burger } from "../../common/types";
+import { getBurgers } from "../../services/get-burgers";
 
-type Burger = {
-    name: string,
-    price: string,
-    restaurant: number,
-    id: number,
-    ingredients: {
-        [key: string]: number
-    }
-}
 
 export const Menu = () => {
     const [burgers, setBurgers] = useState<Burger[]>([]);
 
     useEffect(() => {
-        fetch('http://127.0.0.1:8000/api/burger')
-            .then(r => r.json())
+        getBurgers()
             .then(data => {
                 setBurgers(data);
             })
