@@ -1,6 +1,12 @@
+import { Navigation } from "./navigation";
+import { Content } from "./content";
+
 function App() {
   return (
-    <h1>Tu bedzie jedzenie!</h1>
+    <>
+        <Navigation />
+        <Content />
+    </>
   );
 }
 

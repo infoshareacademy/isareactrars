@@ -1,7 +1,7 @@
 import {lazy, Suspense} from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Sign } from './sign/Sign';
-import { Game } from './game/Game';
+import { Game } from './game';
 import { Users } from './users/Users';
 import { MyForm } from './forms/MyForm';
 import { MyBetterForm } from './forms/MyBetterForm';
