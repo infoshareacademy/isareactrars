@@ -12,7 +12,7 @@ export const PageWrapper = ({ title, children }: Props) => {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            marginTop: '30px'
+            padding: '30px',
         }}>
             <Typography variant="h3">{title}</Typography>
             {children}
